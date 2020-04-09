@@ -83,3 +83,6 @@ if __name__ == "__main__":
 
 # 5. Generating a requirements file
 # https://stackoverflow.com/questions/40192651/django-pip-freeze-results-in-empty-file
+
+# 6. Make procfile work on Windows
+# https://medium.com/samk3nny/setting-up-heroku-flask-and-python-on-a-windows-7-pc-7056853ed238
