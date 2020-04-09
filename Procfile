@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT SongsLikeThis.wsgi:application
+web: waitress-serve --port=$PORT app.wsgi:application
