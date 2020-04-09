@@ -13,6 +13,38 @@ def home():
             YouTube video link <input type='text' name='link'>
             <input type='submit' value='Go'>
         </form>
+        
+        <br>
+        
+        <form action="/about">
+            <input type='submit' value='About'>
+        </form>
+    </body></html>
+    """
+
+# Create about page.
+@app.route("/about")
+def about():
+    return"""
+    <html><body>
+        Just think about a song you really like, that you've been trying
+        to find more songs like. 
+        
+        <br>
+        <br>
+        
+        Find it on Youtube and paste its url here to find playlists made by others who enjoyed the song!
+        
+        <br>
+        <br>
+                
+        I've used this to find playlists of similar taste without limiting
+        myself to finding them by genre, which can provide rather stale mixes. 
+        
+        <br>
+        <br>
+                
+        <a href="https://github.com/christina-zhou-96/FindYoSongs">Code</a>
     </body></html>
     """
 
