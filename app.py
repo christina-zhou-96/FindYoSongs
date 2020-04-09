@@ -78,11 +78,14 @@ if __name__ == "__main__":
 # which sounds cuter and easier than Amazon or Google
 # https://pythonhow.com/deploying-your-web-application-to-the-cloud/
 
-# 4. The official Windows help
+# 4. Generating a requirements file
+# https://stackoverflow.com/questions/40192651/django-pip-freeze-results-in-empty-file
+
+# 5. The official Windows help
 # Notice the special Windows procfile...
 # https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app
 
-# 5. Make a Procfile with Waitress
+# 6. Make a Procfile with Waitress
 # https://books.google.com/books?id=cVlPDwAAQBAJ&pg=PT282&lpg=PT282&dq=%22waitress%22+procfile&source=bl&ots=xNJYeoYq9_&sig=ACfU3U1aUYxH6Zjxy5pi-jXDJdf4CZF_2w&hl=en&sa=X&ved=2ahUKEwioxOPcitzoAhWCl3IEHSGsAwoQ6AEwBnoECAkQKQ#v=onepage&q=%22waitress%22%20procfile&f=false
 # If you're on Windows, you can't use gunicorn, which is what the tutorial
 # wants you to use. (The tutorial does have an example Windows procfile, but
