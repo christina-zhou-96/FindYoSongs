@@ -1,5 +1,7 @@
 # Find all the playlists that contain this video on Youtube.
 
+# Try it out at https://findyosongs.herokuapp.com/
+
 # Notes:
 # You're likely to only get a hit if these are relatively well known songs.
 # This is because this only works if the playlists were indexed elsewhere on the web.
@@ -7,11 +9,9 @@
 # Sometimes, you'll click on the video and there is no playlist, I think
 # the playlist went private in that case.
 
-# Instructions:
-
-# 1. Go to localhost:5000
-# 2. Copy your youtube link and hit go.
-# Just like this: "https://www.youtube.com/watch?v=8UVNT4wvIGY"
+# TODO: I don't think this works with a video link already in a playlist, like
+# v=42ijrf02oij$list=....
+# Should change backend logic to only get the string between v= and &.
 
 from flask import Flask,redirect,request
 
@@ -78,15 +78,13 @@ if __name__ == "__main__":
 # which sounds cuter and easier than Amazon or Google
 # https://pythonhow.com/deploying-your-web-application-to-the-cloud/
 
-# 4. Make a procfile
-# https://stackoverflow.com/questions/25129958/how-to-create-heroku-procfile-for-windows
-
-# 5. Generating a requirements file
-# https://stackoverflow.com/questions/40192651/django-pip-freeze-results-in-empty-file
-
-# 6. Make procfile work on Windows
-# https://medium.com/samk3nny/setting-up-heroku-flask-and-python-on-a-windows-7-pc-7056853ed238
-
-# 7. The official Windows help
+# 4. The official Windows help
 # Notice the special Windows procfile...
 # https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app
+
+# 5. Make a Procfile with Waitress
+# https://books.google.com/books?id=cVlPDwAAQBAJ&pg=PT282&lpg=PT282&dq=%22waitress%22+procfile&source=bl&ots=xNJYeoYq9_&sig=ACfU3U1aUYxH6Zjxy5pi-jXDJdf4CZF_2w&hl=en&sa=X&ved=2ahUKEwioxOPcitzoAhWCl3IEHSGsAwoQ6AEwBnoECAkQKQ#v=onepage&q=%22waitress%22%20procfile&f=false
+# If you're on Windows, you can't use gunicorn, which is what the tutorial
+# wants you to use. (The tutorial does have an example Windows procfile, but
+# that's only applicable for local use.)
+
