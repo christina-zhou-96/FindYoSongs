@@ -65,9 +65,21 @@ if __name__ == "__main__":
 
 # Resources:
 
+# Local app
 # 1. Make a Flask app
 # https://runestone.academy/runestone/books/published/thinkcspy/WebApps/07-InputForAFlaskWebApplication.html
 
 # 2. The idea
 # This is a tip from user Ruben on stack overflow
 # https://webapps.stackexchange.com/questions/44215/how-can-i-view-what-playlist-if-any-a-youtube-video-is-in
+
+# Deployment
+# 3. Overview to deploy with Heroku
+# which sounds cuter and easier than Amazon or Google
+# https://pythonhow.com/deploying-your-web-application-to-the-cloud/
+
+# 4. Make a procfile
+# https://stackoverflow.com/questions/25129958/how-to-create-heroku-procfile-for-windows
+
+# 5. Generating a requirements file
+# https://stackoverflow.com/questions/40192651/django-pip-freeze-results-in-empty-file
