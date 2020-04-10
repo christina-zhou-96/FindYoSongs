@@ -47,6 +47,13 @@ https://books.google.com/books?id=cVlPDwAAQBAJ&pg=PT282&lpg=PT282&dq=%22waitress
 wants you to use. (The tutorial does have an example Windows procfile, but
 that's only applicable for local use.) <br>
 
+Connect to Youtube <br>
+7. Overview of steps to use Youtube API <br>
+https://developers.google.com/youtube/v3/getting-started <br>
+
+8. python Youtube connection <br>
+https://github.com/youtube/api-samples/tree/master/python <br>
+
 <b>Contributions</b> <br>
 
 It would be great if we could nix the step of going to Youtube altogether.
