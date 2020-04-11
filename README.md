@@ -54,6 +54,9 @@ https://developers.google.com/youtube/v3/getting-started <br>
 8. python Youtube connection <br>
 https://github.com/youtube/api-samples/tree/master/python <br>
 
+9. The data structure of a video <br>
+https://developers.google.com/youtube/v3/docs/videos#resource<br>
+
 <b>Contributions</b> <br>
 
 It would be great if we could nix the step of going to Youtube altogether.
