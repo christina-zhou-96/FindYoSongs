@@ -7,7 +7,7 @@
 from googleapiclient.discovery import build
 
 # Data structures
-CREDENTIALS_FILE = r'D:\youtube_api_key.txt'
+CREDENTIALS_FILE = 'youtube_api_key.txt'
 
 DEVELOPER_KEY = None
 YOUTUBE_API_SERVICE_NAME = 'youtube'
