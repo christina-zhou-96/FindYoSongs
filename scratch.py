@@ -6,33 +6,53 @@
 
 from googleapiclient.discovery import build
 
-# Connect to Youtube API
+# Data structures
 CREDENTIALS_FILE = r'D:\youtube_api_key.txt'
 
-file = open(CREDENTIALS_FILE,
-            mode='r')
-
-DEVELOPER_KEY = file.read()
-
-file.close()
-
+DEVELOPER_KEY = None
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
-youtube = build(YOUTUBE_API_SERVICE_NAME,
-                YOUTUBE_API_VERSION,
-                developerKey=DEVELOPER_KEY)
+# Connect to Youtube API
+def _build_youtube_instance():
+
+    file = open(CREDENTIALS_FILE,
+                mode='r')
+    DEVELOPER_KEY = file.read()
+    file.close()
+
+    youtube = build(YOUTUBE_API_SERVICE_NAME,
+                    YOUTUBE_API_VERSION,
+                    developerKey=DEVELOPER_KEY)
+
+    return youtube
 
 # Run a search for videos
-search_response = youtube.search().list(
-    part='snippet',
-    maxResults=1
-).execute()
+def _search_videos(youtube):
+    search_response = youtube.search().list(
+        part='snippet',
+        maxResults=1
+    ).execute()
 
-# Select the top video
-video = search_response.get('items', [])[0]
+    return search_response
 
 # Select the top video's ID
-id = video['id']['videoId']
+def _top_id(search_response):
 
-# Return the ID
+    # Select the top video
+    video = search_response.get('items', [])[0]
+
+    # Select the top video's ID
+    id = video['id']['videoId']
+
+    # Return the ID
+    return id
+
+# Outer function
+def youtube_connector():
+
+    youtube = _build_youtube_instance()
+
+    search_response = _search_videos(youtube)
+
+    return _top_id(search_response)
