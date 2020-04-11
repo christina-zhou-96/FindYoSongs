@@ -10,6 +10,15 @@ def home():
     return"""
     <html><body>
         <h2>Find yo songs</h2>
+        <i>you have to put in a relatively well known song. then click on a result. on the right sidebar is a playlist that a REAL PERSON made, so now you have a playlist you can listen to.*
+<br>
+of course, the more popular the song, the more results you will get (:</i>
+<br>
+<br>
+<i>*if "mix" is in the description, don't click on it - these are private and won't show</i>
+<br>
+<br>
+<br>
         <form action="/query">
             Your song and artist <input type='text' name='query'>
             <input type='submit' value='Go'>
@@ -31,10 +40,7 @@ def about():
         <b>Have you ever really liked a song</b>, but not because of its genre, just because it's good?
         <br>
         <br>        
-        I have trouble finding similar songs; algorithms don't do the trick.
-        <br>
-        <br>
-        I'd rather find what other people like me enjoyed!
+        Generally I trust other peoples' good taste over algorithms.
         <br>
         <br>
         This search seeks out public playlists on Youtube that contain your desired song.
@@ -101,5 +107,5 @@ def link():
 
 # Run app.
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
