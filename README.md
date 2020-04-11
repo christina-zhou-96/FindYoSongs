@@ -57,6 +57,9 @@ https://github.com/youtube/api-samples/tree/master/python <br>
 9. The data structure of a video <br>
 https://developers.google.com/youtube/v3/docs/videos#resource<br>
 
+10. Read text in python <br>
+https://cmdlinetips.com/2018/01/how-to-read-entire-text-file-in-python/<br>
+
 <b>Contributions</b> <br>
 
 It would be great if we could nix the step of going to Youtube altogether.
