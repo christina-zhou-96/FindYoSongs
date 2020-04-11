@@ -19,15 +19,20 @@ file.close()
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
-youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,
+youtube = build(YOUTUBE_API_SERVICE_NAME,
+                YOUTUBE_API_VERSION,
                 developerKey=DEVELOPER_KEY)
 
 # Run a search for videos
-# YouTube.Search.list('snippet['thumbnails']['url']', {q: '<query>'})
+search_response = youtube.search().list(
+    part='snippet',
+    maxResults=1
+).execute()
 
 # Select the top video
-# search[0]
+video = search_response.get('items', [])[0]
 
-# Select the top video's URL
-# video.snippet.thumbnails.(key).url
-# Return the URL
+# Select the top video's ID
+id = video['id']['videoId']
+
+# Return the ID
