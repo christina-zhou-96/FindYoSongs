@@ -1,4 +1,5 @@
 from flask import Flask,redirect,request
+from youtube import find_video
 
 # Create app instance.
 app = Flask(__name__)
@@ -9,8 +10,8 @@ def home():
     return"""
     <html><body>
         <h2>Find yo songs</h2>
-        <form action="/link">
-            YouTube video link <input type='text' name='link'>
+        <form action="/query">
+            Your song and artist <input type='text' name='query'>
             <input type='submit' value='Go'>
         </form>
         
@@ -27,44 +28,61 @@ def home():
 def about():
     return"""
     <html><body>
-        Just think about a song you really like, that you've been trying
-        to find more songs like. 
-        
+        <b>Have you ever really liked a song</b>, but not because of its genre, just because it's good?
+        <br>
+        <br>        
+        I have trouble finding similar songs; algorithms don't do the trick.
         <br>
         <br>
-        
-        Find it on Youtube and paste its url here to find playlists made by others who enjoyed the song!
-        
+        I'd rather find what other people like me enjoyed!
         <br>
         <br>
-                
-        I've used this to find playlists of similar taste without limiting
-        myself to finding them by genre, which can provide rather stale mixes. 
-        
+        This search seeks out public playlists on Youtube that contain your desired song.
         <br>
         <br>
-                
+        You can get a lot of interesting finds this way...
+        <br>
+        <br>
+        Try it out!
+        <br>
+        <br>
+        <br>
+        <b>Stuck?</b>
+        <br>
+        <br>
+        Try one of these searches:
+        <br>
+        <br>
+        when youre gone
+        <br>
+        <br>
+        316 all about you
+        <br>
+        <br>
+        forever young alphaville
+        <br>
+        <br>
+        the kill 30 seconds to mars
+        <br>
+        <br>
+        <br>
+        <b>
         <a href="https://github.com/christina-zhou-96/FindYoSongs">Code</a>
+        </b>
     </body></html>
     """
 
 # Backend logic to redirect user to the new Google page.
-
-# TODO: I don't think this works with a video link already in a playlist, like
-# v=42ijrf02oij$list=....
-# Should change backend logic to only get the string between v= and &.
-
-@app.route("/link")
+@app.route("/query")
 def link():
 
-    # Get the link from user.
+    # Get the query from user.
 
-    link = request.args['link']
+    query = request.args['query']
 
     # Find the video ID.
-    # Current business rule: video ID is between v= and &
-
-    video_id = link.partition("v=")[2]
+    # Uses Youtube API.
+    video_id = find_video(query)
 
     # Relink to the Google search.
     # Current business rule: looks like site:youtube.com inurl(2jopgOD + list)
@@ -83,5 +101,5 @@ def link():
 
 # Run app.
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
