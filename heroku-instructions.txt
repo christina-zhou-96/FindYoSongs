@@ -4,8 +4,19 @@ After local changes:
 1. Update requirements file
 `pip freeze > requirements.txt`
 
-2. Login to Heroku through cmd in the root project directory
+2. Commit to private branch
 
-3. Push to heroku
-`git push heroku master`
+3. Ensure that private branch can "see" credentials file
+(drop in credentials file, change drive path, change .gitignore)
+
+4. Push private branch to heroku
+`git push heroku private:master`
+
+--------------
+For debugging:
+
+5. Login to Heroku through cmd in the root project directory
+
+6. Run logs --tail
+
 
